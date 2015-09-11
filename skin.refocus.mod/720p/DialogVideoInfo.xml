@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">115</defaultcontrol>
+	<include>transition_Dialog</include>
+	<coordinates>
+		<system>1</system>
+		<left>0</left>
+		<top>0</top>
+		<origin x="485" y="190" />
+	</coordinates>
+	<controls>
+		<control type="image" id="999">
+			<width>310</width>
+			<height>200</height>
+			<include>dialog_Menu</include>
+			<visible>!IsEmpty(Control.GetLabel(377)) + Container.Content(movies)</visible>
+		</control>
+		<control type="image" id="999">
+			<width>310</width>
+			<height>160</height>
+			<include>dialog_Menu</include>
+			<visible>IsEmpty(Control.GetLabel(377)) + Container.Content(movies)</visible>
+		</control>
+		<control type="image" id="999">
+			<width>310</width>
+			<height>160</height>
+			<include>dialog_Menu</include>
+			<visible>!IsEmpty(Control.GetLabel(377))  + !Container.Content(movies)</visible>
+		</control>
+		<control type="image" id="999">
+			<width>310</width>
+			<height>120</height>
+			<include>dialog_Menu</include>
+			<visible>IsEmpty(Control.GetLabel(377)) + !Container.Content(movies)</visible>
+		</control>
+		<control type="image">
+			<left>4</left>
+			<top>18</top>
+			<width>302</width>
+			<include>dialog_Separator</include>
+		</control>
+		<control type="grouplist" id="995">
+			<left>4</left>
+			<top>18</top>
+			<width>302</width>
+			<orientation>vertical</orientation>
+			<height min="40" max="250">auto</height>
+			<itemgap>0</itemgap>
+			<!--Extended Info Button-->
+			<control type="button" id="115">
+				<label>Information</label>
+				<width>302</width>
+				<include>dialog_ControlCommons</include>
+				<onclick>Dialog.Close(movieinformation)</onclick>
+				<onclick condition="!System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
+				<onclick condition="IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
+				<onclick condition="Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onclick>
+				<onclick condition="!IsEmpty(ListItem.TvShowTitle) + !IsEmpty(ListItem.Season)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[ListItem.Season],silent=True)</onclick>
+				<ondown>77</ondown>
+				<onup>8008</onup>
+			</control>
+			<!--refresh-->
+			<control type="group" id="77">
+				<label>Refresh</label>
+				<visible>!SubString(Container.FolderPath,plugin://) + !Skin.HasSetting(global.kiosk)</visible>
+				<control type="button" id="6">
+					<width>302</width>
+					<ondown>8005</ondown>
+					<onup>115</onup>
+					<label>Refresh</label>
+					<include>dialog_ControlCommons</include>
+				</control>
+			</control>
+			<!--trailer-->
+			<control type="button" id="8005">
+				<label>$LOCALIZE[20410]</label>
+				<width>302</width>
+				<onclick>SendClick(2003,11)</onclick>
+				<ondown>8008</ondown>
+				<onup>77</onup>
+				<include>dialog_ControlCommons</include>
+				<visible>!IsEmpty(ListItem.Trailer) + Container.Content(movies)</visible>
+			</control>
+			<!--videoextras-->
+			<control type="button" id="8008">
+				<label>Bonus Features</label>
+				<width>302</width>
+				<ondown>115</ondown>
+				<onup>8005</onup>
+				<onclick>XBMC.RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
+				<include>dialog_ControlCommons</include>
+				<visible>!IsEmpty(Control.GetLabel(377))</visible>
+			</control>
+		</control>
+		<control type="image" id="377">
+			<left>-600</left>
+			<top>0</top>
+			<width>54</width>
+			<height>48</height>
+			<texture>$VAR[VideoextrasOverlay]</texture>
+			<visible>System.HasAddon(script.videoextras)</visible>
+		</control>
+	</controls>
+</window>
