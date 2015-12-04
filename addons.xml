@@ -13,7 +13,7 @@
 	</extension>
 </addon>
 
-	<addon id="skin.refocus.mod" version="1.6" name="reFocus MOD" provider-name="Stucky">
+	<addon id="skin.refocus.mod" version="1.7" name="reFocus MOD" provider-name="Stucky">
 	<requires>
 		<import addon="xbmc.gui" version="5.9.0"/>
 		<import addon="script.artistslideshow" version="1.8.2"/>
