@@ -331,14 +331,7 @@
 					<include>menu_Button</include>
 					<visible>Control.IsVisible(50) + SubString(Container.FolderPath,pvr://recordings)</visible>
 				</control> -->
-				<!--slide: poster or fanart-->
-				<control type="button" id="112">
-					<label>$VAR[menu:LayoutSwitch]</label>
-					<onclick condition="Control.IsVisible(521)">Container.SetViewMode(52)</onclick>
-					<onclick condition="Control.IsVisible(52)">Container.SetViewMode(521)</onclick>
-					<include>menu_Button</include>
-					<visible>[Control.IsVisible(52) | Control.IsVisible(521)] + [Container.Content(movies) | Container.Content(tvshows)] + !SubString(Container.FolderPath,plugin://)</visible>
-				</control>
+				
 				<!--thumbnails: small or large grid-->
 				<control type="button" id="114">
 					<label>$VAR[menu:LayoutSwitch]</label>
@@ -382,27 +375,7 @@
 						<include>menu_Button</include>
 						<onclick>Container.SetViewMode(50)</onclick>
 					</control>
-					<!--slide portrait-->
-					<control type="button" id="404">
-						<label>$LOCALIZE[31112]</label>
-						<include>menu_Button</include>
-						<onclick>Container.SetViewMode(52)</onclick>
-						<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]</visible>
-					</control>
-					<!--slide landscape-->
-					<control type="button" id="405">
-						<label>$LOCALIZE[31112]</label>
-						<include>menu_Button</include>
-						<onclick>Container.SetViewMode(521)</onclick>
-						<visible>Container.Content(musicvideos) | [Container.Content(files) + Container.HasFiles + !SubString(Container.FolderPath,plugin://)]</visible>
-					</control>
-					<!--slide square-->
-					<control type="button" id="406">
-						<label>$LOCALIZE[31112]</label>
-						<include>menu_Button</include>
-						<onclick>Container.SetViewMode(522)</onclick>
-						<visible>Container.Content(addons)</visible>
-					</control>
+				
 					<!--thumbnails portrait-->
 					<control type="button" id="407">
 						<label>$LOCALIZE[31113]</label>
@@ -453,15 +426,7 @@
 					<include>menu_Button</include>
 					<visible>Control.IsVisible(50) + Container.Content(artists) + !SubString(Container.FolderPath,plugin://)</visible>
 				</control>
-				<!--slide: landscape or portrait-->
-				<control type="button" id="111">
-					<label>$VAR[menu:LayoutSwitch]</label>
-					<textwidth>250</textwidth>
-					<onclick condition="Control.IsVisible(522)">Container.SetViewMode(521)</onclick>
-					<onclick condition="Control.IsVisible(521)">Container.SetViewMode(522)</onclick>
-					<include>menu_Button</include>
-					<visible>[Control.IsVisible(521) | Control.IsVisible(522)] + Container.Content(artists)</visible>
-				</control>
+			
 				<!--options-->
 				<include>menu_Sorting</include>
 				<include>menu_LibraryHeader</include>
@@ -488,13 +453,7 @@
 					<include>menu_Button</include>
 					<onclick>Container.SetViewMode(50)</onclick>
 				</control>
-				<!--slide-->
-				<control type="button" id="403">
-					<label>$LOCALIZE[31112]</label>
-					<include>menu_Button</include>
-					<onclick>Container.SetViewMode(522)</onclick>
-					<visible>Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(singles)</visible>
-				</control>
+		
 				<!--thumbnails-->
 				<control type="button" id="404">
 					<label>$LOCALIZE[31113]</label>
@@ -580,14 +539,7 @@
 					<include>menu_Button</include>
 					<onclick>Container.SetViewMode(50)</onclick>
 				</control>
-				<!--slide-->
-				<control type="button" id="40">
-					<label>$LOCALIZE[31112]</label>
-					<textwidth>250</textwidth>
-					<include>menu_Button</include>
-					<onclick>Container.SetViewMode(522)</onclick>
-					<visible>Container.Content(addons)</visible>
-				</control>
+			
 				<!--thumbnails-->
 				<control type="button" id="403">
 					<label>$LOCALIZE[31113]</label>
@@ -671,14 +623,7 @@
 						<include>menu_Button</include>
 						<onclick>Container.SetViewMode(50)</onclick>
 					</control>
-					<!--slide-->
-					<control type="button" id="403">
-						<label>$LOCALIZE[31112]</label>
-						<textwidth>250</textwidth>
-						<include>menu_Button</include>
-						<onclick>Container.SetViewMode(522)</onclick>
-						<visible>Container.Content(addons) + !IsEmpty(Container.FolderPath) + ![StringCompare(Container.FolderPath,addons://disabled/) | StringCompare(Container.FolderPath,addons://enabled/) | StringCompare(Container.FolderPath,addons://repos/)]</visible>
-					</control>
+				
 					<!--thumbnails-->
 					<control type="button" id="404">
 						<label>$LOCALIZE[31113]</label>
@@ -798,14 +743,7 @@
 					<visible>Window.IsActive(tvguide) | Window.IsActive(radioguide) | SubString(Container.FolderPath,pvr://recordings/)</visible>
 				</control>
 				
-				<control type="togglebutton" id="110">
-					<label>$LOCALIZE[31120]: $LOCALIZE[31121]</label>
-					<altlabel>$LOCALIZE[31120]: $LOCALIZE[31122]</altlabel>
-					<onclick>Skin.ToggleSetting(view.list.fanart)</onclick>
-					<usealttexture>!Skin.HasSetting(view.list.fanart)</usealttexture>
-					<include>menu_Button</include>
-					<visible>Window.IsActive(tvguide) | Window.IsActive(radioguide) | SubString(Container.FolderPath,pvr://recordings/)</visible>
-				</control>
+		
 				
 				
 				<!--group recordings-->
@@ -883,39 +821,9 @@
 						<onclick>Container.SetViewMode(13)</onclick>
 						<visible>Window.IsActive(tvguide) | Window.IsActive(radioguide)</visible>
 					</control>
-					<!--recordings list-->
-					<control type="button" id="410">
-						<label>$LOCALIZE[535]</label>
-						<textwidth>250</textwidth>
-						<include>menu_Button</include>
-						<onclick>Container.SetViewMode(50)</onclick>
-						<visible>SubString(Container.FolderPath,pvr://recordings/)</visible>
-					</control>
-					<!--tv recordings slide-->
-					<control type="button" id="411">
-						<label>$LOCALIZE[31112]</label>
-						<textwidth>250</textwidth>
-						<include>menu_Button</include>
-						<onclick>Container.SetViewMode(521)</onclick>
-						<visible>Window.IsActive(tvrecordings)</visible>
-					</control>
-					<!--radio recordings slide-->
-					<control type="button" id="412">
-						<label>$LOCALIZE[31112]</label>
-						<textwidth>250</textwidth>
-						<include>menu_Button</include>
-						<onclick>Container.SetViewMode(522)</onclick>
-						<visible>Window.IsActive(radiorecordings)</visible>
-					</control>
-					<!--recordings thumbnails-->
-					<control type="button" id="413">
-						<label>$LOCALIZE[31113]</label>
-						<textwidth>250</textwidth>
-						<include>menu_Button</include>
-						<onclick condition="Window.IsActive(radiorecordings)">Container.SetViewMode(572)</onclick>
-						<onclick condition="Window.IsActive(tvrecordings)">Container.SetViewMode(575)</onclick>
-						<visible>Window.IsActive(tvrecordings) | Window.IsActive(radiorecordings)</visible>
-					</control>
+			
+				
+		
 				
 				</control>
 			</control>

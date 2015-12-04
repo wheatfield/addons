@@ -52,12 +52,29 @@
 							<aspectratio align="center" aligny="bottom">keep</aspectratio>
 							<include>art_Logo</include>
 						</control>
-						<control type="group">
-							<visible>Container.Content(tvshows) | Container.Content(episodes)</visible>
-							<top>330</top>
+					
+							
+						<!--tveps-->
 							<control type="group">
+							<visible>!Substring(Container.FolderPath,plugin://plugin.video.youtube)</visible>
+							<control type="image">
+								<left>-7</left>
+								<top>320</top>
+								<width>546</width>
+								<height>288</height>
+								<include>art_Frame-nf</include>
+							</control>
+							<control type="image">
+								<top>327</top>
+								<width>532</width>
+								<height>274</height>
+								<texture border="0">frames/plot.png</texture>
+								<aspectratio>stretch</aspectratio>
+							</control>
+							
 							<control type="textbox">
-							<left>45</left>
+								<top>334</top>
+								<left>45</left>
 								<width>532</width>
 								<height max="275">auto</height>
 								<label>$VAR[media:airdate]</label>
@@ -65,26 +82,16 @@
 								<visible>!Substring(Container.FolderPath,plugin://plugin.video.netflixbmc) + !Substring(Container.FolderPath,plugin://plugin.video.youtube)</visible>
 							</control>
 							<control type="textbox">
-							<left>270</left>
+								<top>334</top>
+								<left>270</left>
 								<width>532</width>
 								<height max="275">auto</height>
 								<label>[B]Duration: $INFO[ListItem.Duration,, $LOCALIZE[31701]][/B]</label>
 								<include>detail_Text</include>
 								<visible>!Substring(Container.FolderPath,plugin://plugin.video.netflixbmc) + !Substring(Container.FolderPath,plugin://plugin.video.youtube)</visible>
 							</control>
-							</control>
-						<!--tveps-->
-							<control type="group">
-							<visible>!Substring(Container.FolderPath,plugin://plugin.video.youtube)</visible>
-							<control type="image">
-							<left>-7</left>
-							<top>-10</top>
-								<width>546</width>
-								<height>280</height>
-								<include>art_Frame-fo</include>
-							</control>
 							<control type="textbox">
-								<top>42</top>
+								<top>376</top>
 								<left>10</left>
 								<width>510</width>
 								<height>210</height>
@@ -98,14 +105,14 @@
 							<visible>Substring(Container.FolderPath,plugin://plugin.video.youtube)</visible>
 							<!-- <top>-40</top> -->
 							<control type="image">
-							<left>-7</left>
-							<top>-10</top>
+								<left>-7</left>
+								<top>320</top>
 								<width>546</width>
 								<height>280</height>
 								<include>art_Frame-nf</include>
 							</control>
 							<control type="textbox">
-								<top>4</top>
+								<top>334</top>
 								<left>10</left>
 								<width>510</width>
 								<height>242</height>
@@ -114,7 +121,7 @@
 								<align>justify</align>
 							</control>
 							</control>
-						</control>
+						
 						<control type="grouplist">
 							<visible>Container.Content(movies)</visible>
 							<top>315</top>
@@ -213,7 +220,7 @@
 					<left>15</left>
 					<width>595</width>
 					<label>$INFO[ListItem.Label]</label>
-					<include>container_Single</include>
+					<include>container_Title</include>
 				</control>
 			</itemlayout>
 			<focusedlayout condition="IsEmpty(Container.FolderPath) | Substring(Container.FolderPath,plugin://plugin.video.youtube)" width="620" height="40">
@@ -223,14 +230,14 @@
 					<include>container_Focus</include>
 					<control type="image">
 						<width>650</width>
-						<height>40</height>
+						<height>44</height>
 						<texture>views/focus.png</texture>
 					</control>
 					<control type="label">
 						<left>15</left>
 						<width>595</width>
 						<label>$INFO[ListItem.Label]</label>
-						<include>container_Single-focus</include>
+						<include>container_Title-focus</include>
 					</control>
 				</control>
 				<control type="label">
@@ -610,7 +617,7 @@
 				<label>$VAR[media:Plot]</label>
 				<autoscroll>![Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo)]</autoscroll>
 				<include>detail_Text</include>
-				<visible>Control.IsVisible(50) + [Container.Content(addons) | SubString(Container.FolderPath,plugin://) | -SubString(Container.FolderPath,pvr://recordings)]</visible>
+				<visible>Control.IsVisible(50) + [Container.Content(addons) | SubString(Container.FolderPath,plugin://) | -SubString(Container.FolderPath,pvr://recordings)] + !Substring(Container.FolderPath,plugin://plugin.video.hdtrailers_net</visible>
 			</control>
 		</control>
 	</include>

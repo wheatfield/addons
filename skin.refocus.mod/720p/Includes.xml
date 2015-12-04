@@ -15,7 +15,7 @@
 	<include file="ViewBanner.xml" />
 	<include file="ViewIcon.xml" />
 	<include file="ViewList.xml" />
-	<include file="ViewSlide.xml" />
+	
 	<include file="ViewsTV.xml" />
 	<include file="script-skinshortcuts-includes.xml" />
 	<!--CONSTANTS-->
@@ -394,7 +394,7 @@
 	</include>
 	<!--CONTAINER-->
 	<include name="container_Title">
-		<height>40</height>
+		<height>44</height>
 		<font>regular_Bigger</font>
 		<aligny>center</aligny>
 		<textcolor>Color1</textcolor>
@@ -402,7 +402,7 @@
 		<scroll>false</scroll>
 	</include>
 	<include name="container_Title-focus">
-		<height>40</height>
+		<height>44</height>
 		<font>regular_Bigger</font>
 		<aligny>center</aligny>
 		<textcolor>Focused</textcolor>
