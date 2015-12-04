@@ -13,7 +13,6 @@
 	<include file="Menu.xml" />
 	<include file="Variables.xml" />
 	<include file="ViewBanner.xml" />
-	<include file="ViewGallery.xml" />
 	<include file="ViewIcon.xml" />
 	<include file="ViewList.xml" />
 	<include file="ViewSlide.xml" />
@@ -336,29 +335,7 @@
 		<aligny>center</aligny>
 		<scroll>false</scroll>
 	</include>
-	<!-- <include name="global_MenuGuide">
-		<control type="group" id="6100">
-			<left>20</left>
-			<top>16</top>
-			<include>toggle_Menu</include>
-			<visible>!Skin.HasSetting(global.kiosk) + [Window.IsActive(SettingsCategory.xml) | Window.IsActive(programs) | Window.IsActive(weather) | Window.IsActive(musicplaylist) | Window.IsActive(videoplaylist) | Window.IsActive(addonbrowser) | Window.IsActive(videolibrary) | Window.IsActive(musiclibrary) | Window.IsActive(musicfiles) | Window.IsActive(pictures) | SubString(Container.FolderPath,pvr://) | Window.IsActive(tvguide) | Window.IsActive(radioguide) | Window.IsActive(tvsearch) | Window.IsActive(radiosearch) | Window.IsActive(600)] + !Control.IsVisible(9900)</visible>
-			<include>transition_Indicator</include>
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>navigation/left.png</texture>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(501) | Control.IsVisible(54) | Control.IsVisible(541) | Control.IsVisible(57) | Control.IsVisible(571) | Control.IsVisible(572) | Control.IsVisible(574) | Control.IsVisible(575) | Window.IsActive(weather) | Window.IsActive(600) | Window.IsActive(SettingsCategory.xml)] + ![Window.IsActive(movieinformation) | Window.IsActive(musicinformation)]</visible>
-				<include>nav_IndicatorLeft</include>
-			</control>
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>navigation/up.png</texture>
-				<visible>[Control.IsVisible(52) | Control.IsVisible(521) | Control.IsVisible(522) | Control.IsVisible(53) | Control.IsVisible(58)] + ![Window.IsActive(movieinformation) | Window.IsActive(musicinformation)] + !Window.IsActive(weather)</visible>
-				<include>nav_IndicatorUp</include>
-			</control>
-		</control>
-	</include>  -->
+	
 	<!--DETAILS-->
 	<include name="detail_Header">
 		<height>32</height>

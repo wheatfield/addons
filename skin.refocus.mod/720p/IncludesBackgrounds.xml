@@ -7,17 +7,10 @@
 				<include>screen_Dimensions</include>
 				<include>toggle_Menu</include>
 				<texture background="true">$VAR[window:Background]</texture>
-				<visible>!Skin.HasSetting(fanart.global) + IsEmpty(ListItem.Property(Fanart_Image)) + ![Player.HasVideo + Skin.HasSetting(backgroundvideo.global)]</visible>
+				<visible>!Skin.HasSetting(fanart.global) + IsEmpty(ListItem.Property(Fanart_Image)) + ![Player.HasVideo + Skin.HasSetting(backgroundvideo.global)] + !Substring(Container.FolderPath,plugin://plugin.video.hdtrailers_net</visible>
 				<fadetime>fadetime_Fanart</fadetime>
 			</control>
-			<!-- <control type="image">
-				<include>screen_Dimensions</include>
-				<include>toggle_Menu</include>
-				<texture background="true">youtube.jpg</texture>
-				
-				<visible>Substring(Container.FolderPath,plugin://plugin.video.youtube)</visible>
-				<fadetime>fadetime_Fanart</fadetime>
-			</control> -->
+		
 			<control type="image">
 				<include>screen_Dimensions</include>
 				<include>toggle_Menu</include>

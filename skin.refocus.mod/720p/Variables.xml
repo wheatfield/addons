@@ -213,8 +213,8 @@
 		<value condition="IsEmpty(ListItem.Property(Tagline)) + IsEmpty(ListItem.Property(PlotOutline))">$INFO[ListItem.Property(Plot)]</value>
 	</variable>
 	<variable name="media:airdate">
-		<value condition="Control.IsVisible(50) + Container.Content(tvshows) + !IsEmpty(ListItem.Plot)">[UPPERCASE][B]$VAR[media:NextAired.Info,,[CR]][/B][/UPPERCASE]</value>
-		<value condition="Control.IsVisible(50) + Container.Content(episodes) + !IsEmpty(ListItem.Plot)">[UPPERCASE][B]$LOCALIZE[31227] $INFO[ListItem.Premiered,,[CR]][/B][/UPPERCASE]</value>
+		<value condition="Control.IsVisible(50) + Container.Content(tvshows) + !IsEmpty(ListItem.Plot)">[B]$VAR[media:NextAired.Info,,[CR]][/B]</value>
+		<value condition="Control.IsVisible(50) + Container.Content(episodes) + !IsEmpty(ListItem.Plot)">[B]Aired: $INFO[ListItem.Premiered,,[CR]][/B]</value>
 	</variable>
 	<variable name="media:Plot">
 		<value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_Description)]</value>
