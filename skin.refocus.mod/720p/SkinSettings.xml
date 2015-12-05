@@ -103,6 +103,16 @@
 					<itemgap>2</itemgap>
 					<pagecontrol>70</pagecontrol>
 					<visible>Skin.String(SkinSettings,Home)</visible>
+					
+					<!--diffuse color-->
+					<control type="radiobutton" id="201">
+						<label>Use alt color theme</label>
+						
+						<onclick>Skin.ToggleSetting(diffuseoverlay.enable)</onclick>
+						<selected>Skin.HasSetting(diffuseoverlay.enable)</selected>
+						<include>settings_Radiobutton</include>
+					</control>
+					
 					<!--home menu configuration-->
 					<control type="button" id="101">
 						<label>$LOCALIZE[31211]</label>

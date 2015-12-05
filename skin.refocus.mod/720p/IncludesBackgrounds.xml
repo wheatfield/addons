@@ -47,7 +47,19 @@
 			<include>screen_Dimensions</include>
 			<texture background="true">overlays/base_color.png</texture>
 			<colordiffuse>base_1</colordiffuse>
-			<visible>[![Window.IsActive(Pictures) + Control.IsVisible(531)] + !Window.IsActive(Visualisation)]</visible>
+			<visible>[![Window.IsActive(Pictures) + Control.IsVisible(531)] + !Window.IsActive(Visualisation)] + !Skin.HasSetting(diffuseoverlay.enable)</visible>
+		</control>
+		<!--black diffuse-->
+		<control type="image">
+			<aspectratio>scale</aspectratio>
+			<include>screen_Dimensions</include>
+			<texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
+			<animation effect="fade" time="200">WindowOpen</animation>
+            <animation effect="fade" time="200">WindowClose</animation>
+            <animation effect="fade" end="100" time="440" delay="160">Visible</animation>
+            <animation effect="fade" start="100" end="0" time="320">Hidden</animation>
+            <animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
+			<visible>[![Window.IsActive(Pictures) + Control.IsVisible(531)] + !Window.IsActive(Visualisation)] + Skin.HasSetting(diffuseoverlay.enable)</visible>
 		</control>
 	</include>
 </includes>

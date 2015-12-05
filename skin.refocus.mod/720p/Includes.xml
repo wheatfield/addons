@@ -417,6 +417,14 @@
 		<selectedcolor>Color5</selectedcolor>
 		<scroll>false</scroll>
 	</include>
+	<include name="container_Sub_dark">
+		<height>40</height>
+		<font>regular_Small-U</font>
+		<aligny>center</aligny>
+		<textcolor>Color1</textcolor>
+		<selectedcolor>Color5</selectedcolor>
+		<scroll>false</scroll>
+	</include>
 	<include name="container_Sub-focus">
 		<height>40</height>
 		<font>regular_Small-U</font>

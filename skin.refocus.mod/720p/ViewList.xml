@@ -92,8 +92,8 @@
 							</control>
 							<control type="textbox">
 								<top>376</top>
-								<left>10</left>
-								<width>510</width>
+								<left>21</left>
+								<width>490</width>
 								<height>210</height>
 								<label>$VAR[media:Plot]</label>
 								<include>detail_Text</include>
@@ -264,7 +264,16 @@
 					<label>$VAR[media:Info] $VAR[rating:Song]</label>
 					<selectedcolor>Color2</selectedcolor>
 					<include>container_Sub</include>
-					<visible>!Substring(Container.FolderPath,plugin://script.videoextras"</visible>
+					<visible>!Substring(Container.FolderPath,plugin://script.videoextras" + !Skin.HasSetting(diffuseoverlay.enable)</visible>
+				</control>
+				<control type="label">
+					<left>15</left>
+					<top>28</top>
+					<width>550</width>
+					<label>$VAR[media:Info] $VAR[rating:Song]</label>
+					<selectedcolor>Color2</selectedcolor>
+					<include>container_Sub_dark</include>
+					<visible>!Substring(Container.FolderPath,plugin://script.videoextras" + Skin.HasSetting(diffuseoverlay.enable)</visible>
 				</control>
 				<control type="label">
 					<left>15</left>
