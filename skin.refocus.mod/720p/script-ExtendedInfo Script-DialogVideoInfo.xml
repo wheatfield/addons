@@ -60,7 +60,7 @@
 							<animation effect="slide" start="100" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
 							<visible>Container(5000).HasNext + ControlGroup(5000).HasFocus</visible>
 						</control>
-						<!--button group-->
+				<!--button group-->
 						<control type="grouplist" id="5000">
 							<posx>0</posx>
 							<posy>10</posy>
@@ -152,7 +152,7 @@
 							</control>
 						</control>
 					</control>
-					<!--codec group-->
+				<!--codec group-->
 					<control type="group" id="274">
 						<posy>40</posy>
 						<height>50</height>
@@ -243,8 +243,8 @@
 					<control type="group" id="50111">
 						<visible>IntegerGreaterThan(Container(1000).NumItems,0)</visible>
 						<height>353</height>
-						<!--cast label header-->
-						<control type="label">
+				<!--cast label header-->
+						<!-- <control type="label">
 							<posx>17</posx>
 							<posy>4</posy>
 							<width>333</width>
@@ -252,8 +252,8 @@
 							<aligny>center</aligny>
 							<font>regular_Big</font>
 							<label>$LOCALIZE[206]$INFO[Container(1000).NumItems, (,)]</label>
-						</control>
-						<control type="image">
+						</control> -->
+					<!-- 	<control type="image">
 							<posx>0</posx>
 							<posy>133</posy>
 							<width>19</width>
@@ -262,8 +262,8 @@
 							<animation effect="slide" start="20,0" end="0,0" time="200">VisibleChange</animation>
 							<animation effect="slide" start="-100" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
 							<visible>Container(1000).HasPrevious + Control.HasFocus(1000)</visible>
-						</control>
-						<control type="image">
+						</control> -->
+						<!-- <control type="image">
 							<posx>1255</posx>
 							<posy>133</posy>
 							<width>19</width>
@@ -272,13 +272,13 @@
 							<animation effect="slide" start="-20,0" end="0,0" time="200">VisibleChange</animation>
 							<animation effect="slide" start="100" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
 							<visible>Container(1000).HasNext + Control.HasFocus(1000)</visible>
-						</control>
+						</control> -->
 						<!--actor panel-->
 						<control type="panel" id="1000">
 							<posx>-33</posx>
-							<posy>14</posy>
+							<posy>-20</posy>
 							<width>1287</width>
-							<height>333</height>
+							<height>407</height>
 							<onleft>1000</onleft>
 							<onright>1000</onright>
 							<onup>5111</onup>
@@ -289,14 +289,14 @@
 								<effect type="slide" start="0,1387" end="0,0" delay="0" tween="sine" time="1800" />
 							</animation>
 							<!--actor thumbs-->
-							<itemlayout height="333" width="180">
+							<itemlayout height="407" width="190">
 								<control type="group">
 									<!--nonfocus frame-->
 									<control type="image">
 										<posy>0</posy>
 										<posx>33</posx>
-										<width>187</width>
-										<height>253</height>
+										<width>209</width>
+										<height>287</height>
 										<texture border="65" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
 									</control>
 									<control type="group">
@@ -305,8 +305,8 @@
 										<!--nofocus thumbs-->
 										<control type="image">
 											<posy>7</posy>
-											<width>141</width>
-											<height>207</height>
+											<width>163</width>
+											<height>240</height>
 											<texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
 											<aspectratio aligny="center">scale</aspectratio>
 											<fadetime>0</fadetime>
@@ -314,20 +314,20 @@
 										<!--diffuse frames?-->
 										<control type="image">
 											<posy>7</posy>
-											<width>141</width>
-											<height>207</height>
+											<width>163</width>
+											<height>240</height>
 											<texture fallback="DefaultVideo.png">common/black.png</texture>
 											<animation effect="fade" start="100" end="0" time="0" condition="!Control.HasFocus(1000)">Conditional</animation>
 											<animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
 											<aspectratio aligny="center">scale</aspectratio>
 										</control>
 										<control type="textbox">
-											<width>152</width>
-											<posx>-5</posx>
+											<width>184</width>
+											<posx>-11</posx>
 											<height>93</height>
-											<posy>227</posy>
+											<posy>258</posy>
 											<align>center</align>
-											<font>font12</font>
+											<font>font12-Big</font>
 											<textcolor>FFFAFAFA</textcolor>
 											<animation effect="fade" start="100" end="70" time="0" condition="Control.HasFocus(1000)">Conditional</animation>
 											<label>$INFO[ListItem.Label]$INFO[ListItem.Property(character),[COLOR FF999999][CR] $LOCALIZE[20347] ,[/COLOR]]</label>
@@ -335,21 +335,21 @@
 									</control>
 								</control>
 							</itemlayout>
-							<focusedlayout height="333" width="180">
+							<focusedlayout height="407" width="190">
 								<control type="group">
 									<control type="image">
 										<posy>0</posy>
 										<posx>33</posx>
-										<width>189</width>
-										<height>255</height>
+										<width>211</width>
+										<height>287</height>
 										<texture border="65" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-focus.png</texture>
 										<visible>Control.HasFocus(1000)</visible>
 									</control>
 									<control type="image">
 										<posy>0</posy>
 										<posx>33</posx>
-										<width>189</width>
-										<height>255</height>
+										<width>211</width>
+										<height>287</height>
 										<texture border="65" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
 										<visible>!Control.HasFocus(1000)</visible>
 									</control>
@@ -358,20 +358,20 @@
 										<posy>16</posy>
 										<control type="image">
 											<posy>7</posy>
-											<width>141</width>
-											<height>207</height>
+											<width>163</width>
+											<height>240</height>
 											<texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
 											<aspectratio aligny="center">scale</aspectratio>
 											<fadetime>0</fadetime>
 										</control>
 										<control type="textbox">
-											<width>152</width>
+											<width>184</width>
 											<height>93</height>
-											<posx>-5</posx>
-											<posy>227</posy>
+											<posx>-11</posx>
+											<posy>258</posy>
 											<align>center</align>
 											<textcolor>FFFAFAFA</textcolor>
-											<font>font12</font>
+											<font>font12-Big</font>
 											<label>$INFO[ListItem.Label]$INFO[ListItem.Property(character),[COLOR FF999999][CR] $LOCALIZE[20347] ,[/COLOR]]</label>
 											<autoscroll delay="5000" time="AutoScrollTime" repeat="8001">true</autoscroll>
 										</control>
@@ -411,10 +411,10 @@
 							<posx>50</posx>
 							<posy>18</posy>
 							<width>723</width>
-							<height>120</height>
+							<height>110</height>
 							<textcolor>FFFAFAFA</textcolor>
 							<align>left</align>
-							<label>$INFO[Window.Property(movie.plot)].</label>
+							<label>$INFO[Window.Property(movie.plot)]</label>
 							<font>small_plot</font>
 							<autoscroll delay="10000" time="3000" repeat="10000">!Skin.HasSetting(AutoScroll)</autoscroll>
 						</control>
@@ -449,13 +449,14 @@
 							<effect type="fade" start="0" end="100" delay="0" time="0" tween="cubic" />
 							<effect type="slide" start="0,53" end="0,0" delay="460" time="960" tween="cubic" />
 						</animation>
+				<!--Title tagline-->
 						<control type="group">
 							<posx>0</posx>
 							<posy>-20</posy>
 							<width>679</width>
 							<height>133</height>
 							<aligny>top</aligny>
-							<itemgap>20</itemgap>
+							<!-- <itemgap>42</itemgap> -->
 							<orientation>vertical</orientation>
 							<!--Title-->
 							<control type="label">
@@ -469,20 +470,21 @@
 							<control type="label">
 								<posx>2</posx>
 								<width>679</width>
-								<height>100</height>
+								<height>104</height>
 								<label>$INFO[Window.Property(movie.Tagline)]</label>
 								<font>regular_tagline</font>
 								<scroll>true</scroll>
 							</control>
 						</control>
 					</control>
-					<!--First Row-->
+				<!--First Row-->
 					<control type="group">
 						<posy>-10</posy>
 						<animation type="WindowOpen" reversible="false">
 							<effect type="fade" start="0" end="100" delay="460" time="960" tween="cubic" />
 							<effect type="zoom" start="100,0" end="100,100" delay="460" time="960" center="0,113" tween="cubic" />
 						</animation>
+				<!--top line-->
 						<control type="image">
 							<posx>0</posx>
 							<posy>60</posy>
@@ -490,6 +492,7 @@
 							<height>1</height>
 							<texture>info/infopanel_line.png</texture>
 						</control>
+				<!--bottom line-->
 						<control type="image">
 							<posx>0</posx>
 							<posy>113</posy>
@@ -525,16 +528,16 @@
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>8</posy>
+									<posy>6</posy>
 									<width>103</width>
 									<height>25</height>
 									<align>center</align>
 									<label>$INFO[Window.Property(movie.omdb.imdbRating)]</label>
-									<font>font14</font>
+									<font>font16</font>
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>25</posy>
+									<posy>24</posy>
 									<width>103</width>
 									<height>25</height>
 									<align>center</align>
@@ -556,16 +559,16 @@
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>8</posy>
+									<posy>6</posy>
 									<width>103</width>
 									<height>25</height>
 									<align>center</align>
 									<label>$INFO[Window.Property(movie.Duration)]</label>
-									<font>font14</font>
+									<font>font16</font>
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>25</posy>
+									<posy>24</posy>
 									<width>103</width>
 									<height>25</height>
 									<align>center</align>
@@ -586,16 +589,16 @@
 								<width>147</width>
 								<control type="label">
 									<posx>0</posx>
-									<posy>8</posy>
+									<posy>6</posy>
 									<width>147</width>
 									<height>25</height>
 									<align>center</align>
 									<label fallback="?">$INFO[Window.Property(movie.release_date)]</label>
-									<font>font14</font>
+									<font>font16</font>
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>25</posy>
+									<posy>24</posy>
 									<width>147</width>
 									<height>25</height>
 									<align>center</align>
@@ -618,16 +621,16 @@
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>8</posy>
+									<posy>6</posy>
 									<width>147</width>
 									<height>25</height>
 									<align>center</align>
 									<label>$INFO[Window.Property(movie.Budget),$]</label>
-									<font>font14</font>
+									<font>font16</font>
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>25</posy>
+									<posy>24</posy>
 									<width>147</width>
 									<height>25</height>
 									<align>center</align>
@@ -650,16 +653,16 @@
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>8</posy>
+									<posy>6</posy>
 									<width>147</width>
 									<height>25</height>
 									<align>center</align>
 									<label fallback="?">$INFO[Window.Property(movie.Revenue),$]</label>
-									<font>font14</font>
+									<font>font16</font>
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>25</posy>
+									<posy>24</posy>
 									<width>147</width>
 									<height>25</height>
 									<align>center</align>

@@ -469,6 +469,23 @@
 		<selectedcolor>Selected</selectedcolor>
 		<scroll>true</scroll>
 	</include>
+	<include name="container_24">
+		<height>38</height>
+		<font>regular_24</font>
+		<aligny>center</aligny>
+		<textcolor>Color1</textcolor>
+		<selectedcolor>Selected</selectedcolor>
+		<scroll>false</scroll>
+	</include>
+	<include name="container_24-focus">
+		<height>38</height>
+		<font>regular_24</font>
+		<aligny>center</aligny>
+		<textcolor>Focused</textcolor>
+		<selectedcolor>Selected</selectedcolor>
+		<scroll>true</scroll>
+	</include>
+	
 	<!--COLUMN STYLES-->
 	<include name="column_Header">
 		<height>20</height>
@@ -1281,7 +1298,7 @@
 		<posx>0</posx>
 		<posy>60</posy>
 		<width>0</width>
-		<height>30</height>
+		<height>40</height>
 		<texturefocus>-</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<label>-</label>

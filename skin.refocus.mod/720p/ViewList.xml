@@ -215,29 +215,31 @@
 			<include>global_ListScroll</include>
 			<include>transition_Info</include>
 			<include>transition_Content</include>
-			<itemlayout condition="IsEmpty(Container.FolderPath) | Substring(Container.FolderPath,plugin://plugin.video.youtube)" width="620" height="40">
+			<itemlayout condition="IsEmpty(Container.FolderPath) | Substring(Container.FolderPath,plugin://plugin.video.youtube)" width="620" height="43.5">
 				<control type="label">
+			
 					<left>15</left>
 					<width>595</width>
 					<label>$INFO[ListItem.Label]</label>
-					<include>container_Title</include>
+					<include>container_24</include>
 				</control>
 			</itemlayout>
-			<focusedlayout condition="IsEmpty(Container.FolderPath) | Substring(Container.FolderPath,plugin://plugin.video.youtube)" width="620" height="40">
+			<focusedlayout condition="IsEmpty(Container.FolderPath) | Substring(Container.FolderPath,plugin://plugin.video.youtube)" width="620" height="43.5">
 				<control type="group">
 					<width>620</width>
-					<height>67</height>
-					<include>container_Focus</include>
+				
+					<include>container_24-Focus</include>
 					<control type="image">
 						<width>650</width>
-						<height>44</height>
+						<height>42</height>
 						<texture>views/focus.png</texture>
 					</control>
 					<control type="label">
+
 						<left>15</left>
 						<width>595</width>
 						<label>$INFO[ListItem.Label]</label>
-						<include>container_Title-focus</include>
+						<include>container_24-focus</include>
 					</control>
 				</control>
 				<control type="label">

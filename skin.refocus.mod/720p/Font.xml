@@ -40,22 +40,22 @@
 		<font>
 			<name>regular_path</name>
 			<filename>Default/Regular.ttf</filename>
-			<size>16</size>
+			<size>19</size>
 		</font>
 		<font>
 			<name>regular_tagline</name>
 			<filename>Default/Regular.ttf</filename>
-			<size>18</size>
+			<size>20</size>
 		</font>
 		<font>
 			<name>regular_plot</name>
 			<filename>Default/Regular.ttf</filename>
-			<size>18</size>
+			<size>19</size>
 		</font>
 		<font>
 			<name>small_plot</name>
 			<filename>Default/Regular.ttf</filename>
-			<size>17</size>
+			<size>20</size>
 		</font>
 		<font>
 			<name>regular</name>
@@ -93,6 +93,11 @@
 		<font>
 			<name>regular_Bigger</name>
 			<filename>Default/SemiBold.ttf</filename>
+			<size>24</size>
+		</font>
+		<font>
+			<name>regular_24</name>
+			<filename>Default/Regular.ttf</filename>
 			<size>24</size>
 		</font>
 		<font>
@@ -245,7 +250,7 @@
 		<font>
 			<name>light_Header</name>
 			<filename>Default/Light.ttf</filename>
-			<size>38</size>
+			<size>42</size>
 		</font>
 		<font>
 			<name>light_Window</name>
@@ -260,9 +265,19 @@
 			<size>14</size>
 		</font>
 		<font>
+			<name>font11</name>
+			<filename>fallback/Roboto-Regular.ttf</filename>
+			<size>15</size>
+		</font>
+		<font>
 			<name>font12</name>
 			<filename>fallback/Roboto-Regular.ttf</filename>
 			<size>17</size>
+		</font>
+			<font>
+			<name>font12-Big</name>
+			<filename>fallback/Roboto-Regular.ttf</filename>
+			<size>19</size>
 		</font>
 		<font>
 			<name>font13</name>
@@ -277,7 +292,7 @@
 		<font>
 			<name>font16</name>
 			<filename>fallback/Roboto-Regular.ttf</filename>
-			<size>25</size>
+			<size>23</size>
 		</font>
 		<font>
 			<name>font30</name>

@@ -527,7 +527,7 @@
 						<orientation>horizontal</orientation>
 						<control type="button" id="1001">
 							<width>425</width>
-							<label>[UPPERCASE]$LOCALIZE[31800][/UPPERCASE]</label>
+							<label>[UPPERCASE]skin modification[/UPPERCASE]</label>
 							<onclick>noop</onclick>
 							<textcolor>Color2</textcolor>
 							<include>settings_Listbutton</include>
@@ -547,13 +547,13 @@
 						<orientation>horizontal</orientation>
 						<control type="button" id="1004">
 							<width>425</width>
-							<label>Jeroen Pardon</label>
+							<label>Stucky Wheatfield</label>
 							<onclick>noop</onclick>
 							<include>settings_Listbutton</include>
 						</control>
 						<control type="button" id="1005">
 							<width>425</width>
-							<label>$INFO[System.AddonVersion(skin.refocus)]</label>
+							<label>$INFO[System.AddonVersion(skin.refocus.mod)]</label>
 							<onclick>noop</onclick>
 							<include>settings_Listbutton</include>
 						</control>
@@ -564,22 +564,23 @@
 						<textcolor>Color2</textcolor>
 						<include>settings_Listbutton</include>
 					</control>
-					<control type="button" id="1007">
-						<label>$LOCALIZE[31805]</label>
-						<onclick>noop</onclick>
-						<include>settings_Listbutton</include>
-					</control>
-					<control type="button" id="1008">
+					<control type="button" id="1004">
+							<!-- <width>425</width> -->
+							<label>Jeroen Pardon</label>
+							<onclick>noop</onclick>
+							<include>settings_Listbutton</include>
+						</control>
+					<!-- <control type="button" id="1008">
 						<label>[UPPERCASE]$LOCALIZE[31802][/UPPERCASE]</label>
 						<onclick>noop</onclick>
 						<textcolor>Color2</textcolor>
 						<include>settings_Listbutton</include>
-					</control>
-					<control type="button" id="1009">
+					</control> -->
+					<!-- <control type="button" id="1009">
 						<label>Climacons by Adam Whitcroft - [B]adamwhitcroft.com/climacons[/B]</label>
 						<onclick>noop</onclick>
 						<include>settings_Listbutton</include>
-					</control>
+					</control> -->
 					<control type="button" id="10010">
 						<label>[UPPERCASE]$LOCALIZE[31803][/UPPERCASE]</label>
 						<onclick>noop</onclick>
