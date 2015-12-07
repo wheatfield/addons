@@ -40,10 +40,13 @@
 		<platform>all</platform>
 		<summary lang="en">reFocus MOD by Stucky</summary>
 		<description lang="en">reFocus, Stucky style!</description>
-		<license>Attribution-NonCommercial-ShareAlike 3.0 Unported</license>
+			<license>Attribution-NonCommercial-ShareAlike 3.0 Unported</license>
+
+
 	</extension>
 </addon>
-<addon id="skin.refocus.stucky" version="1.0" name="reFocus Stucky" provider-name="Stucky">
+
+	<addon id="skin.refocus.stucky" version="1.0" name="reFocus Stucky" provider-name="Stucky">
 	<requires>
 		<import addon="xbmc.gui" version="5.9.0"/>
 		<import addon="script.artistslideshow" version="1.8.2"/>
@@ -70,7 +73,9 @@
 		<platform>all</platform>
 		<summary lang="en">reFocus MOD by Stucky</summary>
 		<description lang="en">reFocus, Stucky style!</description>
-		<license>Attribution-NonCommercial-ShareAlike 3.0 Unported</license>
+			<license>Attribution-NonCommercial-ShareAlike 3.0 Unported</license>
+
+
 	</extension>
 </addon>
 </addons>
