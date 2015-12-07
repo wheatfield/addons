@@ -2,6 +2,37 @@
 <window type="script" id="1118">
 	<defaultcontrol always="true">5111</defaultcontrol>
 	<controls>
+	<control type="group">
+			<description>addon required lists</description>
+			<visible>false</visible>
+			<control type="list" id="1150">
+				<include>hiddenlist</include>
+			</control>		
+			<control type="list" id="550">
+				<include>hiddenlist</include>
+			</control>	
+			<control type="list" id="1450">
+				<include>hiddenlist</include>
+			</control>	
+			<control type="list" id="650">
+				<include>hiddenlist</include>
+			</control>				
+			<control type="list" id="850">
+				<include>hiddenlist</include>
+			</control>				
+			<control type="list" id="1050">
+				<include>hiddenlist</include>
+			</control>								
+			<control type="list" id="950">
+				<include>hiddenlist</include>
+			</control>
+			<control type="list" id="1250">
+				<include>hiddenlist</include>
+			</control>					
+			<control type="list" id="450">
+				<include>hiddenlist</include>
+			</control>	
+		</control>
 		<control type="group">
 			<animation effect="slide" start="3361,0" end="0,0" time="1500" tween="sine">WindowOpen</animation>
 			<animation effect="slide" end="828,0" time="450" tween="sine" condition="Control.HasFocus(5111) | ControlGroup(5000).HasFocus">WindowClose</animation>
@@ -404,14 +435,14 @@
 					<posy>160</posy>
 					<ondown>4000</ondown>
 					<width>1400</width>
-					<height>697</height>
+					<height>800</height>
 					<control type="grouplist" id="140">
 						<itemgap>-12</itemgap>
 						<control type="textbox">
 							<posx>50</posx>
 							<posy>18</posy>
 							<width>723</width>
-							<height>110</height>
+							<height>115</height>
 							<textcolor>FFFAFAFA</textcolor>
 							<align>left</align>
 							<label>$INFO[Window.Property(movie.plot)]</label>
@@ -429,12 +460,15 @@
 							<label>[B]$INFO[Window.Property(movie.director),$LOCALIZE[31808]: ][/B]</label>
 							<font>regular_plot</font>
 						</control>
+						<control type="button" id="5111">
+							<include>HiddenObject3</include>
+						</control>
 						<control type="label" id="616">
 							<posx>50</posx>
 							<width>723</width>
 							<textcolor>FFFAFAFA</textcolor>
 							<align>left</align>
-							<label>[CR][B]$INFO[Window.Property(movie.writer),$LOCALIZE[31809]: ][/B]</label>
+							<label>[B]$INFO[Window.Property(movie.writer),$LOCALIZE[31809]: ][/B]</label>
 							<font>regular_plot</font>
 						</control>
 					</control>
@@ -452,12 +486,11 @@
 				<!--Title tagline-->
 						<control type="group">
 							<posx>0</posx>
-							<posy>-20</posy>
+							<posy>-25</posy>
 							<width>679</width>
 							<height>133</height>
 							<aligny>top</aligny>
-							<!-- <itemgap>42</itemgap> -->
-							<orientation>vertical</orientation>
+						
 							<!--Title-->
 							<control type="label">
 								<width>679</width>
@@ -468,6 +501,7 @@
 								<visible>!Window.IsVisible(DialogBusy.xml)</visible>
 							</control>
 							<control type="label">
+							    <posy>2</posy>
 								<posx>2</posx>
 								<width>679</width>
 								<height>104</height>
@@ -528,7 +562,7 @@
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>6</posy>
+									<posy>4</posy>
 									<width>103</width>
 									<height>25</height>
 									<align>center</align>
@@ -537,7 +571,7 @@
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>24</posy>
+									<posy>25</posy>
 									<width>103</width>
 									<height>25</height>
 									<align>center</align>
@@ -559,7 +593,7 @@
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>6</posy>
+									<posy>4</posy>
 									<width>103</width>
 									<height>25</height>
 									<align>center</align>
@@ -568,7 +602,7 @@
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>24</posy>
+									<posy>25</posy>
 									<width>103</width>
 									<height>25</height>
 									<align>center</align>
@@ -589,7 +623,7 @@
 								<width>147</width>
 								<control type="label">
 									<posx>0</posx>
-									<posy>6</posy>
+									<posy>4</posy>
 									<width>147</width>
 									<height>25</height>
 									<align>center</align>
@@ -598,7 +632,7 @@
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>24</posy>
+									<posy>25</posy>
 									<width>147</width>
 									<height>25</height>
 									<align>center</align>
@@ -621,7 +655,7 @@
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>6</posy>
+									<posy>4</posy>
 									<width>147</width>
 									<height>25</height>
 									<align>center</align>
@@ -630,7 +664,7 @@
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>24</posy>
+									<posy>25</posy>
 									<width>147</width>
 									<height>25</height>
 									<align>center</align>
@@ -653,7 +687,7 @@
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>6</posy>
+									<posy>4</posy>
 									<width>147</width>
 									<height>25</height>
 									<align>center</align>
@@ -662,7 +696,7 @@
 								</control>
 								<control type="label">
 									<posx>0</posx>
-									<posy>24</posy>
+									<posy>25</posy>
 									<width>147</width>
 									<height>25</height>
 									<align>center</align>

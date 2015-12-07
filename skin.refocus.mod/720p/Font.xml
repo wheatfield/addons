@@ -50,12 +50,12 @@
 		<font>
 			<name>regular_plot</name>
 			<filename>Default/Regular.ttf</filename>
-			<size>19</size>
+			<size>21</size>
 		</font>
 		<font>
 			<name>small_plot</name>
 			<filename>Default/Regular.ttf</filename>
-			<size>20</size>
+			<size>21</size>
 		</font>
 		<font>
 			<name>regular</name>
@@ -262,8 +262,9 @@
 		<font>
 			<name>font10</name>
 			<filename>fallback/Roboto-Regular.ttf</filename>
-			<size>14</size>
+			<size>15</size>
 		</font>
+		
 		<font>
 			<name>font11</name>
 			<filename>fallback/Roboto-Regular.ttf</filename>

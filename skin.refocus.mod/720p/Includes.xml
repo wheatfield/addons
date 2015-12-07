@@ -1298,11 +1298,36 @@
 		<posx>0</posx>
 		<posy>60</posy>
 		<width>0</width>
-		<height>40</height>
+		<height>36</height>
 		<texturefocus>-</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<label>-</label>
 		<font>-</font>
+	</include>
+	<include name="HiddenObject3">
+		<posx>0</posx>
+		<posy>60</posy>
+		<width>0</width>
+		<height>26</height>
+		<texturefocus>-</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<label>-</label>
+		<font>-</font>
+	</include>
+	<include name="hiddenlist">
+		<description>container</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1</width>
+		<height>1</height>
+		<onleft>9000</onleft>
+		<onright>9000</onright>
+		<onup>9000</onup>
+		<ondown>9000</ondown>
+		<viewtype label="Actor">list</viewtype>
+		<pagecontrol>-</pagecontrol>
+		<itemlayout height="1" width="1" />
+		<focusedlayout height="1" width="1" />
 	</include>
 	<!--WINDOW TITLES-->
 	<include name="windowTitle">
