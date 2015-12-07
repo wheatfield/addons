@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<!-- ============================= -->
+	<!-- ========= TOP INFO ========== -->
+	<!-- ============================= -->
+	<include name="WeatherTopInfo">
+		<control type="group">
+			<control type="group">
+				<visible>Weather.IsFetched + !SubString(Window(Weather).Property(Current.ConditionIcon),na) + ![IsEmpty(Window(Weather).Property(Current.Condition)) | IsEmpty(Window(Weather).Property(Location))]</visible>
+				<!-- Top Info Left -->
+				<control type="group">
+					<top>65</top>
+					<control type="image">
+						<description>current weather icon</description>
+						<left>230</left>
+						<top>10</top>
+						<height>190</height>
+						<width>190</width>
+						<texture>$INFO[Window.Property(Current.ConditionIcon)]</texture>
+					</control>
+					<!-- *Disabled* -->
+					<control type="grouplist">
+						<left>37</left>
+						<top>35</top>
+						<width>1000</width>
+						<height>150</height>
+						<itemgap>0</itemgap>
+						<align>left</align>
+						<orientation>horizontal</orientation>
+						<control type="label">
+							<description>big current temp value</description>
+							<height>130</height>
+							<width min="10" max="500">auto</width>
+							<font>FontSize_140</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(Current.Temperature)]</label>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+						</control>
+						<control type="label">
+							<description>temperature units value</description>
+							<height>55</height>
+							<width min="10" max="500">auto</width>
+							<font>FontSize_40</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[System.TemperatureUnits]</label>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+						</control>
+					</control>
+					<control type="grouplist">
+						<left>43</left>
+						<top>165</top>
+						<width>1000</width>
+						<height>50</height>
+						<itemgap>15</itemgap>
+						<align>left</align>
+						<orientation>horizontal</orientation>
+						<control type="label">
+							<description>current condition</description>
+							<height>40</height>
+							<width min="10" max="500">auto</width>
+							<font>FontSize_40</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(Current.Condition)]</label>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+						</control>
+						<control type="label">
+							<description>Feels Like</description>
+							<height>55</height>
+							<width min="10" max="500">auto</width>
+							<font>FontSize_22</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(Current.FeelsLike),[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] ]$INFO[System.TemperatureUnits], $INFO[Window.Property(Current.Humidity),[COLOR=ddC6C6C8]$LOCALIZE[406]:[/COLOR] ]</label>
+							<textcolor>ffffffff</textcolor>
+							<shadowcolor>ff0d0d0d</shadowcolor>
+						</control>
+					</control>
+				</control>
+				<!-- Day/Date/Year Right -->
+				<control type="group">
+					<left>775</left>
+					<top>10</top>
+					<control type="label">
+						<description>Date</description>
+						<left>98</left>
+						<top>110</top>
+						<width>365</width>
+						<height>50</height>
+						<font>FontSize_85</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[System.Date(dd)]</label>
+						<textcolor>white</textcolor>
+						<shadowcolor>ff0d0d0d</shadowcolor>
+					</control>
+					<control type="label">
+						<description>Weekday</description>
+						<left>18</left>
+						<top>105</top>
+						<width>350</width>
+						<height>30</height>
+						<font>FontSize_34</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[System.Date(DDD)]</label>
+						<shadowcolor>ff0d0d0d</shadowcolor>
+					</control>
+					<control type="label">
+						<description>Month</description>
+						<left>18</left>
+						<top>139</top>
+						<width>350</width>
+						<height>30</height>
+						<font>FontSize_34</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[System.Date(MMM)]</label>
+						<shadowcolor>ff0d0d0d</shadowcolor>
+					</control>
+				</control>
+				<!-- Sunrise/Sunset/Provider Right -->
+				<control type="group">
+					<left>856</left>
+					<top>195</top>
+					<control type="label">
+						<description>Sunrise-Sunset</description>
+						<left>-100</left>
+						<top>0</top>
+						<width>480</width>
+						<height>30</height>
+						<font>FontSize_20</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<scroll>false</scroll>
+						<label>$INFO[Window.Property(Today.Sunrise),[COLOR=ddC6C6C8]$LOCALIZE[33027]: [/COLOR]],  $INFO[Window.Property(Today.Sunset),[COLOR=ddC6C6C8]$LOCALIZE[33028]: [/COLOR]]</label>
+						<visible>!IsEmpty(Window.Property(Today.Sunrise)) + !IsEmpty(Window.Property(Today.Sunset))</visible>
+						<shadowcolor>ff0d0d0d</shadowcolor>
+					</control>
+					<control type="label">
+						<description>last update</description>
+						<left>0</left>
+						<top>23</top>
+						<width>380</width>
+						<height>30</height>
+						<font>FontSize_20</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<scroll>false</scroll>
+						<label>$INFO[Window.Property(Updated),[COLOR=ddC6C6C8]$LOCALIZE[31278]: [/COLOR]]</label>
+						<shadowcolor>ff0d0d0d</shadowcolor>
+					</control>
+					<!-- Current Weather Provider -->
+					<control type="label">
+						<description>current provider</description>
+						<left>0</left>
+						<top>46</top>
+						<width>380</width>
+						<height>30</height>
+						<font>FontSize_20</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<scroll>false</scroll>
+						<label>$INFO[Window.Property(WeatherProvider),[COLOR=ddC6C6C8]$LOCALIZE[31279]: [/COLOR]]</label>
+						<shadowcolor>ff0d0d0d</shadowcolor>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+	<!-- ================================================================ -->
+	<!-- ================== DEFAULT WEATHER ADDON ======================= -->
+	<!-- ================================================================ -->
+	<include name="WeatherDefault">
+		<control type="group">
+			<control type="group" id="50">
+				<visible>Weather.IsFetched + !SubString(Window(Weather).Property(Current.ConditionIcon),na) + ![IsEmpty(Window(Weather).Property(Current.Condition)) | IsEmpty(Window(Weather).Property(Location))]</visible>
+				<control type="list" id="52">
+					<left>40</left>
+					<top>280</top>
+					<width>1200</width>
+					<height>335</height>
+					<onleft>52</onleft>
+					<onright>52</onright>
+					<onup condition="!SubString(Window(Weather).Property(Current.ConditionIcon),na)">9111</onup>
+					<ondown>noop</ondown>
+					<itemgap>3</itemgap>
+					<preloaditems>4</preloaditems>
+					<orientation>horizontal</orientation>
+					<viewtype label="535">list</viewtype>
+					<scrolltime tween="cubic" easing="out">350</scrolltime>
+					<itemlayout height="325" width="300">
+						<control type="image">
+							<left>4</left>
+							<top>14</top>
+							<width>292</width>
+							<height>317</height>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>
+							<texture>colorize/100.png</texture>
+							<colordiffuse>column3</colordiffuse>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>25</top>
+							<width>270</width>
+							<height>30</height>
+							<font>FontSize_26</font>
+							<textcolor>ddC6C6C8</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>55</top>
+							<width>270</width>
+							<height>30</height>
+							<font>FontSize_26</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>255</top>
+							<width>270</width>
+							<height>30</height>
+							<font>FontSize_26</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(HighTemperature)]</label>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>285</top>
+							<width>270</width>
+							<height>30</height>
+							<font>FontSize_26</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(LowTemperature)]</label>
+						</control>
+						<control type="image">
+							<left>61</left>
+							<top>75</top>
+							<width>180</width>
+							<height>180</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$INFO[ListItem.Icon]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout height="325" width="300">
+						<control type="image">
+							<left>4</left>
+							<top>14</top>
+							<width>292</width>
+							<height>317</height>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>
+							<texture>colorize/100.png</texture>
+							<colordiffuse>column3</colordiffuse>
+						</control>
+						<control type="image">
+							<left>4</left>
+							<top>14</top>
+							<width>292</width>
+							<height>317</height>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>
+							<texture border="30">views/other/focus_blue.png</texture>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>25</top>
+							<width>270</width>
+							<height>30</height>
+							<font>FontSize_26</font>
+							<textcolor>ddC6C6C8</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>55</top>
+							<width>270</width>
+							<height>30</height>
+							<font>FontSize_26</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>255</top>
+							<width>270</width>
+							<height>30</height>
+							<font>FontSize_26</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(HighTemperature)]</label>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>285</top>
+							<width>270</width>
+							<height>30</height>
+							<font>FontSize_26</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(LowTemperature)]</label>
+						</control>
+						<control type="image">
+							<left>61</left>
+							<top>75</top>
+							<width>180</width>
+							<height>180</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$INFO[ListItem.Icon]</texture>
+						</control>
+					</focusedlayout>
+					<content>
+						<include>Weather_DefaultForecast</include>
+					</content>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

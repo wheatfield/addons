@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="3001">
+	<!-- <onload condition="StringCompare(ListItem.Label,..) + Control.IsVisible(51)">Control.Move(51,2)</onload> -->
+	<defaultcontrol always="true">51</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<control type="group" id="377">
+			<!-- include: VisibleFadeEffect -->
+			<animation effect="fade" time="300">Visible</animation>
+			<animation effect="fade" time="300">Hidden</animation>
+			<include>global_Background</include>
+			<include>global_Includes</include>
+			<include>global_Itemcount</include>
+			<!-- <control type="label">
+			<left>25</left>
+				<label>[COLOR=Color2]bonus features[/COLOR]</label>
+				<include>windowTitle</include>
+			</control> -->
+			<control type="label">
+				<left>32</left>
+				<include>windowTitle</include>
+				<visible>!IsEmpty(ListItem.Title)</visible>
+				<shadowcolor>black</shadowcolor>
+				<!-- 	<label>[B]$INFO[ListItem.Title][/B]</label> -->
+				<label>$INFO[ListItem.Title][COLOR=Color2] • Bonus Features[/COLOR]</label>
+			</control>
+			<control type="label">
+				<left>35</left>
+				<top>53</top>
+				<width>500</width>
+				<label>library  •  $INFO[Container.NumItems]</label>
+				<font>regular_Small-U</font>
+				<textcolor>Color3</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<include>transition_WindowTitle</include>
+				<include>toggle_Menu</include>
+			</control>
+			<control type="list" id="51">
+				<viewtype label="535">list</viewtype>
+				<left>30</left>
+				<top>90</top>
+				<width>620</width>
+				<height>603</height>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<onleft>6000</onleft>
+				<onright condition="Window.IsActive(videoplaylist) + Player.HasVideo">99</onright>
+				<onright condition="Window.IsActive(videoplaylist) + !Player.HasVideo">70</onright>
+				<onright condition="Window.IsActive(tvchannels) + Player.HasVideo">99</onright>
+				<onright condition="Window.IsActive(tvchannels) + !Player.HasVideo">70</onright>
+				<onright>noop</onright>
+				<pagecontrol>70</pagecontrol>
+				<preloaditems>2</preloaditems>
+				<include>toggle_Menu</include>
+				<include>global_ListScroll</include>
+				<include>transition_Info</include>
+				<include>transition_Content</include>
+				<itemlayout condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | SubString(Container.FolderPath,playlistvideo://) | [[Container.Content(files) | Container.Content(addons) | Window.IsActive(pictures) | Window.IsActive(programs)] + Container.HasFiles] | SubString(Container.FolderPath,pvr://recordings) + !Substring(Container.FolderPath,plugin://plugin.video.youtube)" width="620" height="67">
+					<control type="label">
+						<left>15</left>
+						<top>6</top>
+						<width>590</width>
+						<height>27</height>
+						<label>$VAR[media:Title]</label>
+						<include>container_Title</include>
+					</control>
+					<control type="label">
+						<left>15</left>
+						<top>28</top>
+						<width>550</width>
+						<label>($INFO[ListItem.Label2])</label>
+						<visible>!IsEmpty(ListItem.Label2)</visible>
+						<selectedcolor>Color2</selectedcolor>
+						<include>container_Sub</include>
+					</control>
+					<control type="group">
+						<right>10</right>
+						<top>18.5</top>
+						<width>28</width>
+						<height>28</height>
+						<include>status_List</include>
+					</control>
+				</itemlayout>
+				<focusedlayout condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | SubString(Container.FolderPath,playlistvideo://) | [[Container.Content(files) | Container.Content(addons) | Window.IsActive(pictures) | Window.IsActive(programs)] + Container.HasFiles] | SubString(Container.FolderPath,pvr://recordings)" width="620" height="67">
+					<control type="group">
+						<width>620</width>
+						<height>67</height>
+						<include>container_Focus</include>
+						<control type="image">
+							<width>630</width>
+							<height>67</height>
+							<texture>views/focus.png</texture>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>6</top>
+							<width>590</width>
+							<height>27</height>
+							<label>$VAR[media:Title]</label>
+							<include>container_Title-focus</include>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>28</top>
+							<width>590</width>
+							<label>($INFO[ListItem.Label2])</label>
+							<visible>!IsEmpty(ListItem.Label2)</visible>
+							<include>container_Sub-focus</include>
+						</control>
+						<control type="group">
+							<right>10</right>
+							<top>18.5</top>
+							<width>28</width>
+							<height>28</height>
+							<include>status_List-fo</include>
+						</control>
+					</control>
+					<control type="group">
+						<width>620</width>
+						<height>67</height>
+						<include>container_Unfocus</include>
+						<control type="label">
+							<left>15</left>
+							<top>6</top>
+							<width>550</width>
+							<height>27</height>
+							<label>$VAR[media:Title]</label>
+							<include>container_Title</include>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>28</top>
+							<width>550</width>
+							<label>$VAR[media:Info] $VAR[rating:Song]</label>
+							<selectedcolor>Color2</selectedcolor>
+							<include>container_Sub</include>
+						</control>
+						<control type="group">
+							<right>10</right>
+							<top>18.5</top>
+							<width>28</width>
+							<height>28</height>
+							<include>status_List</include>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>
